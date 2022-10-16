@@ -1,4 +1,4 @@
-import encodings, codecs,sys, re, subprocess
+import codecs,sys, subprocess
 from importlib import machinery
 
 def phpdecode(input):
