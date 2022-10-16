@@ -2,11 +2,12 @@ import codecs,sys, subprocess
 from importlib import machinery
 
 def phpdecode(input):
+    b = input.tobytes()
     return (
         'import helper;helper.run(b"""{}""")\n'
-            .format("\n".join(str(input.tobytes(),'utf-8')
+            .format("\n".join(str(b, 'utf-8')
             .split("\n")[1:]).replace('"','\\"')),
-        len(input)
+        len(b)
     )
 
 def search_function (s):
